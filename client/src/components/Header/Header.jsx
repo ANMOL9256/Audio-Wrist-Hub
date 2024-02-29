@@ -34,16 +34,16 @@ const Header = () => {
             >
                 <div className="header-content">
                     <ul className="left">
-                        <li onClick={() => navigate("/")}>Home</li>
                         <li onClick={() => navigate("/about")}>About</li>
-                        <li>Categories</li>
+                        <li onClick={() => navigate("/category/1")}>Headphones</li>
+                        <li onClick={() => navigate("/category/2")}>Earbuds</li>
                     </ul>
                     <div className="center" onClick={() => navigate("/")}>
                         Audio Wrist Hub
                     </div>
                     <div className="right">
                         <TbSearch onClick={() => setSearchModal(true)} />
-                        <AiOutlineHeart />
+                        
                         <span
                             className="cart-icon"
                             onClick={() => setShowCart(true)}

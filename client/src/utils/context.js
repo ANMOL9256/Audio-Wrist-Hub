@@ -27,9 +27,10 @@ const AppContext = ({ children }) => {
             (item) =>
                 (subTotal += item.attributes.price * item.attributes.quantity)
         );
-        setCartSubTotal(subTotal);
+        {subTotal<4999?setCartSubTotal(subTotal):setCartSubTotal(Math.round(subTotal*0.9))}
+        //setCartSubTotal(subTotal)
     }, [cartItems]);
-
+    
     const handleAddToCart = (product, quantity) => {
         let items = [...cartItems];
         let index = items?.findIndex((p) => p.id === product?.id);

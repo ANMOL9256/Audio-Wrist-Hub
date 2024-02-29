@@ -25,10 +25,11 @@
     .left {
         list-style-type: none;
         display: none;
-        gap: 25px;
+        gap: 10px;
         @include md {
             display: flex;
         }
+        
         li {
             font-size: 14px;
             font-weight: 600;

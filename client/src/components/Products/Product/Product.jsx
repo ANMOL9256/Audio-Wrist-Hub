@@ -5,7 +5,7 @@ import "./Product.scss";
 const Product = ({ data, id }) => {
     const navigate = useNavigate();
     //let img= process.env.REACT_APP_DEV_URL + data.image.data[0].attributes.url;
-    console.log("hello");
+    //console.log("hello");
     return (
         <div
             className="product-card"

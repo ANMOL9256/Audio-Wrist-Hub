@@ -10,7 +10,7 @@ import { makePaymentRequest } from "../../utils/api";
 import "./Cart.scss";
 
 const Cart = () => {
-    const { cartItems, setShowCart, cartSubTotal } = useContext(Context);
+    const { cartItems, setShowCart, cartSubTotal,setCartItems,setCartSubTotal } = useContext(Context);
     const navigate= useNavigate();
    /* const stripePromise = loadStripe(
         process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY
@@ -32,6 +32,8 @@ const Cart = () => {
     const handleCheckout= ()=> {
         navigate('/');
         setShowCart(false);
+        setCartItems([]);
+        //setCartCount(0);
     }
 
     return (
@@ -65,6 +67,9 @@ const Cart = () => {
                 {!!cartItems.length && (
                     <>
                         <CartItem />
+                        {
+                            (cartSubTotal<5000) ?<p>Add Item worth {5000-cartSubTotal} for 10% discount</p>:<></>
+                        }
                         <div className="cart-footer">
                             <div className="subtotal">
                                 <span className="text">Subtotal:</span>
